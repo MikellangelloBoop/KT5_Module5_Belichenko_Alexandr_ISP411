@@ -1,0 +1,74 @@
+﻿<Page x:Class="Sport5.Pages.AddUser"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Sport5.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+     Title="ИС Прокат Спортивного Инвентаря - Добавление/Редактирование пользователя">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0"
+              VerticalAlignment="Center"
+              HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition Width="300"></ColumnDefinition>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition Width="300"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="90"></RowDefinition>
+            </Grid.RowDefinitions>
+
+
+            <Label Content="Id:" x:Name="IdLabel" Grid.Row="0" Grid.Column="0"></Label>
+            <Label Content="Фамилия:" Grid.Row="1" Grid.Column="0"></Label>
+            <Label Content="Имя:" Grid.Row="2" Grid.Column="0"></Label>
+            <Label Content="Отчество:" Grid.Row="3" Grid.Column="0"></Label>
+            <Label Content="Должность:" Grid.Row="4" Grid.Column="0"></Label>
+            <Label Content="Дата рождения:" Grid.Row="5" Grid.Column="0"></Label>
+
+
+            <TextBox x:Name="IdTextBox" Grid.Row="0" Grid.Column="1" IsReadOnly="True" IsEnabled="False"></TextBox>
+            <TextBox x:Name="LastNameTextBox" Grid.Row="1" Grid.Column="1"></TextBox>
+            <TextBox x:Name="FirstNameTextBox" Grid.Row="2" Grid.Column="1"></TextBox>
+            <TextBox x:Name="MiddleNameTextBox" Grid.Row="3" Grid.Column="1"></TextBox>
+            <ComboBox x:Name="RoleBox" Grid.Row="4" Grid.Column="1"
+                      DisplayMemberPath="Role1"></ComboBox>
+            <DatePicker x:Name="BirthDatePicker" Grid.Row="5" Grid.Column="1"></DatePicker>
+
+
+            <Label Content="Телефон:" Grid.Row="0" Grid.Column="2"></Label>
+            <Label Content="Пол:" Grid.Row="1" Grid.Column="2"></Label>
+            <Label Content="Email:" Grid.Row="2" Grid.Column="2"></Label>
+            <Label Content="Логин:" Grid.Row="3" Grid.Column="2"></Label>
+            <Label Content="Пароль:" Grid.Row="4" Grid.Column="2"></Label>
+            <Label Content="Подтверждение пароля:" Grid.Row="5" Grid.Column="2"></Label>
+
+
+            <TextBox x:Name="PhoneTextBox" Grid.Row="0" Grid.Column="3"></TextBox>
+            <ComboBox x:Name="GenderBox" Grid.Row="1" Grid.Column="3"
+                      DisplayMemberPath="Gender1"></ComboBox>
+            <TextBox x:Name="EmailTextBox" Grid.Row="2" Grid.Column="3"></TextBox>
+            <TextBox x:Name="LoginTextBox" Grid.Row="3" Grid.Column="3"></TextBox>
+            <PasswordBox x:Name="PasswordBox" Grid.Row="4" Grid.Column="3"></PasswordBox>
+            <PasswordBox x:Name="ConfirmPasswordBox" Grid.Row="5" Grid.Column="3"></PasswordBox>
+        </Grid>
+
+        <Button x:Name="BackButton" Content="Назад" Click="BackButton_Click_1" Grid.Row="1" HorizontalAlignment="Left" Margin="10"></Button>
+        <Button x:Name="SaveButton" Content="Сохранить" Click="SaveButton_Click_1" Grid.Row="1" HorizontalAlignment="Right" Margin="10"></Button>
+    </Grid>
+</Page>
