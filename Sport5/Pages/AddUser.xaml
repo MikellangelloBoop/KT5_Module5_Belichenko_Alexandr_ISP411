@@ -68,7 +68,7 @@
             <PasswordBox x:Name="ConfirmPasswordBox" Grid.Row="5" Grid.Column="3"></PasswordBox>
         </Grid>
 
-        <Button x:Name="BackButton" Content="Назад" Click="BackButton_Click_1" Grid.Row="1" HorizontalAlignment="Left" Margin="10"></Button>
-        <Button x:Name="SaveButton" Content="Сохранить" Click="SaveButton_Click_1" Grid.Row="1" HorizontalAlignment="Right" Margin="10"></Button>
+        <Button x:Name="BackButton" Content="Назад" Click="BackButton_Click" Grid.Row="1" HorizontalAlignment="Left" Margin="10"></Button>
+        <Button x:Name="SaveButton" Content="Сохранить" Click="SaveButton_Click" Grid.Row="1" HorizontalAlignment="Right" Margin="10"></Button>
     </Grid>
 </Page>
