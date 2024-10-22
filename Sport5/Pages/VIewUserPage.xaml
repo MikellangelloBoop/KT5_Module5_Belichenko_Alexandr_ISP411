@@ -47,7 +47,6 @@
 
                             <TextBlock Text="{Binding DateOfBirth, 
                                 StringFormat='День Рождения: {0:dd.MM.yyyy}'}" 
-           
                                        TextWrapping="Wrap" />
 
 
@@ -57,13 +56,11 @@
 
 
                         </StackPanel>
-                        <TextBlock Grid.Column="1" Text="{Binding Role.Role1, 
+                        <TextBlock Grid.Column="2" Text="{Binding Role.Role1, 
                             StringFormat={}Должность {0}}" 
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"></TextBlock>
 
-                        <Button x:Name="EditButton" Content="Редактировать"
-                                    Click="EditButton_Click" Grid.Column="3" Margin="10"></Button>
 
                     </Grid>
                 </DataTemplate>

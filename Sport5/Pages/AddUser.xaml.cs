@@ -98,12 +98,72 @@ namespace Sport5.Pages
             {
                 StringBuilder errors = new StringBuilder();
 
-                if(string.IsNullOrWhiteSpace(LastNameTextBox.Text) )
+
+                if (string.IsNullOrWhiteSpace(LastNameTextBox.Text))
                 {
                     errors.AppendLine("Заполните фамилию.");
                 }
+                if (string.IsNullOrWhiteSpace(FirstNameTextBox.Text))
+                {
+                    errors.AppendLine("Заполните имя.");
+                }
+                if (string.IsNullOrWhiteSpace(MiddleNameTextBox.Text))
+                {
+                    errors.AppendLine("Заполните отчество.");
+                }
 
 
+                if (RoleBox.SelectedItem == null)
+                {
+                    errors.AppendLine("Выберите должность.");
+                }
+
+
+
+
+                if (string.IsNullOrWhiteSpace(EmailTextBox.Text))
+                {
+                    errors.AppendLine("Заполните email.");
+                }
+                else if (Data.SportEntities.GetContext().User.Any(u => u.Email == EmailTextBox.Text && u.Id != _currentUser.Id))
+                {
+                    errors.AppendLine("Этот email уже зарегистрирован.");
+                }
+
+
+                if (string.IsNullOrWhiteSpace(LoginTextBox.Text))
+                {
+                    errors.AppendLine("Заполните логин.");
+                }
+                else if (Data.SportEntities.GetContext().User.Any(u => u.Login == LoginTextBox.Text && u.Id != _currentUser.Id))
+                {
+                    errors.AppendLine("Этот логин уже зарегистрирован.");
+                }
+
+
+                if (string.IsNullOrWhiteSpace(PasswordBox.Password))
+                {
+                    errors.AppendLine("Заполните пароль.");
+                }
+                else
+                {
+
+
+                    if (PasswordBox.Password != ConfirmPasswordBox.Password)
+                    {
+                        errors.AppendLine("Пароли не совпадают.");
+                    }
+                }
+
+
+                if (!BirthDatePicker.SelectedDate.HasValue)
+                {
+                    errors.AppendLine("Пожалуйста, выберите дату рождения.");
+                }
+                else
+                {
+                    _currentUser.DateOfBirth = BirthDatePicker.SelectedDate.Value;
+                }
 
 
                 if (errors.Length > 0)
